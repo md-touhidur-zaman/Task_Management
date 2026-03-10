@@ -1,11 +1,6 @@
-
 import { Button } from "@/components/ui/button";
-import { getTasks } from "@/services/tasks.services";
 
-export default async function Home() {
-  
-    const data =await getTasks();
-    console.log(data);
+export default function Home() {
  
   return (
     <div>
