@@ -5,6 +5,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -12,11 +13,25 @@ import {
 import { cn } from "@/lib/utils";
 import { Dot, SquarePen, Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
+import { TablePagination } from "./TablePagination";
+import { useState } from "react";
 
 export default function TaskTable() {
+  const [activePage, setActivePage] = useState(1);
   const { tasks } = useTasks();
+
+  let totalPage = 0;
+  let pages: number[] = [];
+
+  if (tasks?.data) {
+    totalPage = Math.ceil((tasks?.data?.length as number) / 10);
+    const pagesNumber = [...Array(totalPage).keys()]
+    pages= [...pagesNumber]
+  }
+
+
   const allTasks = tasks?.data?.slice(0, 10);
-  console.log(allTasks);
+
   return (
     <div className="text-[#94A3B8] border border-s-2 rounded-xl overflow-clip container mx-auto mt-9 ">
       <Table className="">
@@ -53,12 +68,24 @@ export default function TaskTable() {
               </TableCell>
 
               <TableCell className="text-center space-x-2">
-                <Button><SquarePen className="cursor-pointer" /></Button>
-                <Button><Trash2  className="cursor-pointer" /></Button>
+                <Button>
+                  <SquarePen className="cursor-pointer" />
+                </Button>
+                <Button>
+                  <Trash2 className="cursor-pointer" />
+                </Button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
+
+        <TableFooter className=" bg-[#191F28]">
+          <TableRow className="">
+            <TableCell colSpan={3}>
+              <TablePagination setActivePage={setActivePage} pages={pages}  activePage={activePage}/>
+            </TableCell>
+          </TableRow>
+        </TableFooter>
       </Table>
     </div>
   );
