@@ -29,14 +29,19 @@ export default function TaskTable() {
     pages= [...pagesNumber]
   }
 
+  console.log(activePage)
 
-  const allTasks = tasks?.data?.slice(0, 10);
+
+  const allTasks = tasks?.data?.slice((activePage * 10) - 10, activePage * 10);
 
   return (
     <div className="text-[#94A3B8] border border-s-2 rounded-xl overflow-clip container mx-auto mt-9 ">
       <Table className="">
         <TableHeader className=" bg-[#191F28] ">
           <TableRow className="">
+            <TableHead className=" text-[#94A3B8] text-lg text-center">
+              #
+            </TableHead>
             <TableHead className=" text-[#94A3B8] text-lg text-center">
               Title
             </TableHead>
@@ -51,6 +56,7 @@ export default function TaskTable() {
         <TableBody>
           {allTasks?.map((task) => (
             <TableRow className="text-[#94A3B8]" key={task.id}>
+              <TableCell className="text-md">{task.id}</TableCell>
               <TableCell className="text-md">{task.title}</TableCell>
               <TableCell className="flex justify-center">
                 <span
