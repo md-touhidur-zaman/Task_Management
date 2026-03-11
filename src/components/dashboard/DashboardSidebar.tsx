@@ -59,6 +59,7 @@ export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sideb
               <SidebarMenuItem key={item.title} >
                 <SidebarMenuButton asChild>
                   <Link href={item.url} className="font-medium ">
+                  
                     {item.title}
                   </Link>
                 </SidebarMenuButton>
