@@ -1,5 +1,7 @@
 import CreateTaskButton from "@/components/dashboard/CreateTaskButton";
+import DashboardHeroSection from "@/components/dashboard/DashboardHeroSection";
 import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
+import TaskTable from "@/components/dashboard/TaskTable";
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -10,7 +12,7 @@ import {
 export default function DashboardPage() {
   return (
     <SidebarProvider>
-      <DashboardSidebar/>
+      <DashboardSidebar />
       <SidebarInset className="bg-foreground">
         <header className="flex h-16 shrink-0 items-center justify-between gap-2 border-b px-3">
           <div className="flex items-center justify-center gap-2 px-3 ">
@@ -18,17 +20,13 @@ export default function DashboardPage() {
             <Separator orientation="vertical" className="" />
           </div>
           <div>
-            <CreateTaskButton/>
+            <CreateTaskButton />
           </div>
         </header>
-        {/* <div className="flex flex-1 flex-col gap-4 p-4">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-screen flex-1 rounded-xl bg-muted/50 md:min-h-min" />
-        </div> */}
+        <div className="px-2 lg:px-0 ">
+          <DashboardHeroSection />
+          <TaskTable />
+        </div>
       </SidebarInset>
     </SidebarProvider>
   );

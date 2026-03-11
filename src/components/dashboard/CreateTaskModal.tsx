@@ -1,7 +1,7 @@
 import {
   AlertDialog,
   AlertDialogContent,
-  AlertDialogHeader,
+  AlertDialogDescription,
 } from "@/components/ui/alert-dialog";
 import { Dispatch, SetStateAction } from "react";
 import CreateTaskForm from "./CreateTaskForm";
@@ -10,14 +10,10 @@ export function CreateTaskModal({open, setOpen}: {open: boolean, setOpen: Dispat
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
-      <AlertDialogContent className="bg-[#0A0D21] text-[#94A3B8] shadow-2xl">
-        <AlertDialogHeader>
+      <AlertDialogContent className="bg-[#0A0D21] text-[#94A3B8] shadow-sm shadow-[#7DF9FF]">
+        <AlertDialogDescription>
           <CreateTaskForm setOpen={setOpen}/>
-        </AlertDialogHeader>
-        {/* <AlertDialogFooter className="bg-[#0A0D21]  ">
-          <AlertDialogCancel className="text-foreground! cursor-pointer">Cancel</AlertDialogCancel>
-          <AlertDialogAction className="bg-[#7DF9FF]! text-foreground! cursor-pointer"><Plus/> Add Task</AlertDialogAction>
-        </AlertDialogFooter> */}
+        </AlertDialogDescription>
       </AlertDialogContent>
     </AlertDialog>
   );

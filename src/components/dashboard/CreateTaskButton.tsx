@@ -12,7 +12,7 @@ export default function CreateTaskButton() {
       <div>
         <Button
           onClick={() => setOpen(true)}
-          className="bg-[#7DF9FF] text-foreground border-0 hover:bg-[#7DF9FF]/80 cursor-pointer"
+          className="bg-[#7DF9FF] text-foreground border-0 hover:bg-[#7DF9FF]/80 cursor-pointer font-bold"
           variant={"outline"}
         >
           {" "}
