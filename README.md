@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>🎬 Task Management Dashboard</h1>
 
-## Getting Started
+A modern Task Management Dashboard built with Next.js App Router, TanStack Query, and shadcn/ui. The application demonstrates CRUD operations, clean architecture, and responsive UI using a public API.
 
-First, run the development server:
+<h1>🌐 Live </h1>
+🔗 Deployment Link:    https://task-management-theta-eosin.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<h1>📦 Repository</h1>
+🔗 Frontend Repo: https://github.com/md-touhidur-zaman/Task_Management <br/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<h1>🚀 Live Features</h1>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<pre>
+=> View tasks in a responsive table
+=> Create new tasks using a modal form
+=> Update existing tasks
+=> Delete tasks from the list
+=> Automatic data refetch after mutations
+=> Optimistic UI updates for better UX
+=> Loading skeletons and error handling
+=> Fully responsive layout (mobile, tablet, desktop)
+</pre>
 
-## Learn More
+<h1>🏗️ Tech Stack</h1>
 
-To learn more about Next.js, take a look at the following resources:
+<pre>
+  
+Frontend
+⚛️ Next Js (App Router)
+🔄 Tanstack Query
+📘 TypeScript
+📘 Shadcn Ui,
+🎨 Tailwind CSS
+📡 Axios
+</pre>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<h1>🛠️ Setup Instructions</h1>
 
-## Deploy on Vercel
+<pre>
+  1️⃣ Clone Repository
+      git clone https://github.com/md-touhidur-zaman/Task_Management.git
+      cd Task_Management
+  2️⃣ Install Dependencies
+      npm install
+  4️⃣ Start Development Server
+      npm run dev
+      App will launch at:
+      👉 http://localhost:3000
+  5️⃣ Build for Production
+       npm run build
+</pre>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
