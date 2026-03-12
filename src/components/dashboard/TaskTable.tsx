@@ -1,5 +1,4 @@
 "use client";
-
 import { useTasks } from "@/hooks/useTasks";
 import {
   Table,
@@ -15,6 +14,7 @@ import { Dot, SquarePen, Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { TablePagination } from "./TablePagination";
 import { useState } from "react";
+import TableLoadingSkeleton from "./TableLoadingSkeleton";
 
 export default function TaskTable() {
   const [activePage, setActivePage] = useState(1);
@@ -23,13 +23,16 @@ export default function TaskTable() {
   let totalPage = 0;
   let pages: number[] = [];
 
+  if (tasks.isLoading) return <TableLoadingSkeleton />;
+
+  if (tasks.isError) return <p>Error loading tasks</p>;
+
   if (tasks?.data) {
     totalPage = Math.ceil((tasks?.data?.length as number) / 10);
     const pagesNumber = [...Array(totalPage).keys()]
     pages= [...pagesNumber]
   }
 
-  console.log(activePage)
 
 
   const allTasks = tasks?.data?.slice((activePage * 10) - 10, activePage * 10);
@@ -55,7 +58,7 @@ export default function TaskTable() {
         </TableHeader>
         <TableBody>
           {allTasks?.map((task) => (
-            <TableRow className="text-[#94A3B8]" key={task.id}>
+            <TableRow className="text-[#94A3B8] bg-[#0A0D21]" key={task.id}>
               <TableCell className="text-md">{task.id}</TableCell>
               <TableCell className="text-md">{task.title}</TableCell>
               <TableCell className="flex justify-center">
@@ -87,7 +90,7 @@ export default function TaskTable() {
 
         <TableFooter className=" bg-[#191F28]">
           <TableRow className="">
-            <TableCell colSpan={3}>
+            <TableCell colSpan={4}>
               <TablePagination setActivePage={setActivePage} pages={pages}  activePage={activePage}/>
             </TableCell>
           </TableRow>

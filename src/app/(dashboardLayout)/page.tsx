@@ -1,6 +1,7 @@
 import CreateTaskButton from "@/components/dashboard/CreateTaskButton";
 import DashboardHeroSection from "@/components/dashboard/DashboardHeroSection";
 import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
+import StatisticsData from "@/components/dashboard/StatisticsData";
 import TaskTable from "@/components/dashboard/TaskTable";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -23,9 +24,10 @@ export default function DashboardPage() {
             <CreateTaskButton />
           </div>
         </header>
-        <div className="px-2 lg:px-0 ">
+        <div className="px-2 lg:px-0 space-y-10 ">
           <DashboardHeroSection />
           <TaskTable />
+          <StatisticsData/>
         </div>
       </SidebarInset>
     </SidebarProvider>
